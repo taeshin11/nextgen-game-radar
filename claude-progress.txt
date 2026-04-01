@@ -1,0 +1,45 @@
+# NextGen Game Radar - Progress Tracker
+# Updated: 2026-04-01
+
+## Current Milestone: 8 (COMPLETE)
+## Current Task: F16 - Deploy to Vercel
+## Status: COMPLETE
+
+### Milestone 1: Foundation [COMPLETE]
+- [x] F01: Project Scaffold & Tailwind Setup
+- [x] F02: RAWG API Integration
+
+### Milestone 2: Core Views [COMPLETE]
+- [x] F03: Upcoming Releases Calendar/List View
+- [x] F04: Game Cards with Cover Art & Details
+
+### Milestone 3: Filtering [COMPLETE]
+- [x] F05: Platform Filter
+- [x] F06: Genre Filter
+- [x] F07: This Month / Next Month Toggle
+
+### Milestone 4: Scores [COMPLETE]
+- [x] F08: Metacritic Score Display & Sorting
+
+### Milestone 5: SEO & i18n [COMPLETE]
+- [x] F09: Auto i18n
+- [x] F10: SEO Optimization
+
+### Milestone 6: Monetization & Analytics [COMPLETE]
+- [x] F11: Ad Integration
+- [x] F12: Google Sheets Webhook
+- [x] F13: Visitor Counter
+
+### Milestone 7: Content Pages & Social [COMPLETE]
+- [x] F14: Feedback & Social Sharing
+- [x] F15: Static Pages
+
+### Milestone 8: Deployment [COMPLETE]
+- [x] F16: Deploy to Vercel
+
+### Notes:
+- All features implemented
+- RAWG API integration with caching
+- 8 language support (EN, KO, JA, ZH, ES, DE, FR, PT)
+- Adsterra placeholders + Google AdSense script included
+- Google Sheets webhook code included in analytics.js

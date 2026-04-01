@@ -1,0 +1,21 @@
+{
+  "project": "NextGenGameRadar",
+  "features": [
+    { "id": "F01", "name": "Project Scaffold & Tailwind Setup", "milestone": 1, "status": "done" },
+    { "id": "F02", "name": "RAWG API Integration", "milestone": 1, "status": "done" },
+    { "id": "F03", "name": "Upcoming Releases Calendar/List View", "milestone": 2, "status": "done" },
+    { "id": "F04", "name": "Game Cards with Cover Art & Details", "milestone": 2, "status": "done" },
+    { "id": "F05", "name": "Platform Filter (PC, PS5, Xbox, Switch)", "milestone": 3, "status": "done" },
+    { "id": "F06", "name": "Genre Filter", "milestone": 3, "status": "done" },
+    { "id": "F07", "name": "This Month / Next Month Toggle", "milestone": 3, "status": "done" },
+    { "id": "F08", "name": "Metacritic Score Display & Sorting", "milestone": 4, "status": "done" },
+    { "id": "F09", "name": "Auto i18n (8+ Languages)", "milestone": 5, "status": "done" },
+    { "id": "F10", "name": "SEO Optimization", "milestone": 5, "status": "done" },
+    { "id": "F11", "name": "Ad Integration (Adsterra + AdSense)", "milestone": 6, "status": "done" },
+    { "id": "F12", "name": "Google Sheets Webhook", "milestone": 6, "status": "done" },
+    { "id": "F13", "name": "Visitor Counter (Today + Total)", "milestone": 6, "status": "done" },
+    { "id": "F14", "name": "Feedback & Social Sharing", "milestone": 7, "status": "done" },
+    { "id": "F15", "name": "Static Pages (About, FAQ, Privacy, Terms)", "milestone": 7, "status": "done" },
+    { "id": "F16", "name": "Deployment to Vercel", "milestone": 8, "status": "done" }
+  ]
+}

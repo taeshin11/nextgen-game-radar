@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NextGen Game Radar - Upcoming Video Games & Metacritic Scores</title>
+  <meta name="description" content="Track upcoming video game releases and Metacritic scores for PC, PS5, Xbox Series X/S, and Nintendo Switch. Filter by platform, genre, and release window.">
+  <meta name="keywords" content="upcoming games 2025, new game releases, metacritic scores, upcoming PC games, PS5 game releases, Xbox game calendar, Nintendo Switch new games">
+  <link rel="canonical" href="https://nextgen-game-radar.vercel.app/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NextGen Game Radar - Upcoming Video Games & Metacritic Scores">
+  <meta property="og:description" content="Track upcoming video game releases and Metacritic scores for PC, PS5, Xbox, and Switch.">
+  <meta property="og:url" content="https://nextgen-game-radar.vercel.app/">
+  <meta property="og:image" content="https://nextgen-game-radar.vercel.app/images/og-image.png">
+  <meta property="og:site_name" content="NextGen Game Radar">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NextGen Game Radar - Upcoming Video Games & Metacritic Scores">
+  <meta name="twitter:description" content="Track upcoming video game releases and Metacritic scores for PC, PS5, Xbox, and Switch.">
+  <meta name="twitter:image" content="https://nextgen-game-radar.vercel.app/images/og-image.png">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "NextGen Game Radar",
+    "url": "https://nextgen-game-radar.vercel.app/",
+    "description": "Track upcoming video game releases and Metacritic scores across all major platforms.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://nextgen-game-radar.vercel.app/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'navy': '#1A1F2E',
+            'navy-light': '#222838',
+            'card': '#2A3042',
+            'primary': '#4E8FFF',
+            'primary-hover': '#6BA3FF',
+            'secondary': '#9B6DFF',
+            'accent': '#4ADE80',
+            'warning': '#FBBF24',
+            'danger': '#F87171',
+            'text-primary': '#E8E8EC',
+            'text-secondary': '#8B95A8',
+            'border-dark': '#374151',
+          },
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7098271335538021" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-navy text-text-primary font-sans min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-navy-light border-b border-border-dark sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold text-text-primary" data-i18n="title">NextGen Game Radar</h1>
+          <p class="text-xs text-text-secondary hidden sm:block" data-i18n="subtitle">Upcoming Video Games & Metacritic Scores</p>
+        </div>
+      </div>
+      <nav class="flex items-center gap-4">
+        <select id="langSwitcher" class="bg-card text-text-secondary text-sm rounded-lg px-2 py-1 border border-border-dark focus:outline-none focus:border-primary" aria-label="Language selector">
+          <option value="en">EN</option>
+          <option value="ko">KO</option>
+          <option value="ja">JA</option>
+          <option value="zh">ZH</option>
+          <option value="es">ES</option>
+          <option value="de">DE</option>
+          <option value="fr">FR</option>
+          <option value="pt">PT</option>
+        </select>
+        <a href="pages/about.html" class="text-text-secondary hover:text-primary text-sm hidden md:inline" data-i18n="nav_about">About</a>
+        <a href="pages/faq.html" class="text-text-secondary hover:text-primary text-sm hidden md:inline" data-i18n="nav_faq">FAQ</a>
+        <button id="mobileMenuBtn" class="md:hidden text-text-secondary hover:text-primary" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </nav>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-navy-light border-t border-border-dark px-4 py-3">
+      <a href="pages/about.html" class="block py-2 text-text-secondary hover:text-primary text-sm" data-i18n="nav_about">About</a>
+      <a href="pages/faq.html" class="block py-2 text-text-secondary hover:text-primary text-sm" data-i18n="nav_faq">FAQ</a>
+      <a href="pages/privacy.html" class="block py-2 text-text-secondary hover:text-primary text-sm" data-i18n="nav_privacy">Privacy</a>
+      <a href="pages/terms.html" class="block py-2 text-text-secondary hover:text-primary text-sm" data-i18n="nav_terms">Terms</a>
+    </div>
+  </header>
+
+  <!-- Adsterra Top Banner -->
+  <div class="max-w-7xl mx-auto px-4 mt-4">
+    <div class="ad-slot ad-banner bg-card rounded-lg flex items-center justify-center text-text-secondary text-xs min-h-[90px] border border-border-dark" data-adsterra-key="top-banner">
+      <span>Advertisement</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+
+    <!-- Month Toggle -->
+    <section class="mb-6">
+      <div class="flex flex-wrap items-center gap-3 mb-2">
+        <h2 id="monthTitle" class="text-2xl font-bold text-text-primary"></h2>
+      </div>
+      <div class="flex flex-wrap gap-2" id="monthToggle" role="tablist">
+        <button class="month-btn active px-4 py-2 rounded-lg text-sm font-medium transition-colors" data-period="this" role="tab" aria-selected="true" data-i18n="this_month">This Month</button>
+        <button class="month-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors" data-period="next" role="tab" aria-selected="false" data-i18n="next_month">Next Month</button>
+        <button class="month-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors" data-period="coming" role="tab" aria-selected="false" data-i18n="coming_soon">Coming Soon</button>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="mb-6 space-y-4">
+      <!-- Platform Filter -->
+      <div>
+        <h3 class="text-sm font-semibold text-text-secondary mb-2" data-i18n="platforms">Platforms</h3>
+        <div class="flex flex-wrap gap-2" id="platformFilter" role="group" aria-label="Platform filter">
+          <button class="filter-btn platform-btn active" data-platform="all" data-i18n="all_platforms">All Platforms</button>
+          <button class="filter-btn platform-btn" data-platform="4">
+            <svg class="w-4 h-4 inline-block mr-1" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h11v11H0zm13 0h11v11H13zM0 13h11v11H0zm13 0h11v11H13z"/></svg>PC
+          </button>
+          <button class="filter-btn platform-btn" data-platform="187">
+            <svg class="w-4 h-4 inline-block mr-1" viewBox="0 0 24 24" fill="currentColor"><path d="M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.181.76.814.76 1.505v5.876c2.441 1.193 4.362-.002 4.362-3.153 0-3.2-1.457-4.934-3.985-5.936-1.71-.678-3.592-.97-5.846-.393z"/><path d="M2.254 18.39l3.058.755V8.076c0-.663.243-1.064.725-.997.544.075.724.648.724 1.312v9.31l2.665.68V5.862c-1.809-.317-4.084.124-5.577.9C2.062 7.756 1.1 9.28 1.1 11.38c0 2.18.654 3.523 1.154 7.01z"/><path d="M17.1 17.89c-2.099-.614-3.5-.227-4.587.263v2.762l7.1-2.362v-2.633c-1.1.485-1.813.36-2.513-.03z"/></svg>PS5
+          </button>
+          <button class="filter-btn platform-btn" data-platform="186">
+            <svg class="w-4 h-4 inline-block mr-1" viewBox="0 0 24 24" fill="currentColor"><path d="M4.102 21.033A11.947 11.947 0 0 0 12 24a11.96 11.96 0 0 0 7.902-2.967l-1.517-1.51a9.96 9.96 0 0 1-6.385 2.31 9.96 9.96 0 0 1-6.382-2.31L4.1 21.033zM12 3.168a9.96 9.96 0 0 1 6.385 2.31l1.518-1.51A11.96 11.96 0 0 0 12 1a11.95 11.95 0 0 0-7.898 2.967l1.518 1.51A9.953 9.953 0 0 1 12 3.169zM1.968 7.102A11.947 11.947 0 0 0 0 12c0 1.834.412 3.572 1.152 5.127l1.862-1.09A9.96 9.96 0 0 1 2.167 12c0-1.476.32-2.876.894-4.136L1.968 7.1zM22.848 6.873A11.96 11.96 0 0 1 24 12c0 1.463-.317 2.853-.886 4.104l1.862 1.09A11.94 11.94 0 0 0 24 12c0-1.863-.425-3.628-1.184-5.205l-1.968 1.078z"/></svg>Xbox
+          </button>
+          <button class="filter-btn platform-btn" data-platform="7">
+            <svg class="w-4 h-4 inline-block mr-1" viewBox="0 0 24 24" fill="currentColor"><circle cx="8" cy="8" r="2"/><circle cx="8" cy="16" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="12" cy="12" r="2"/></svg>Switch
+          </button>
+        </div>
+      </div>
+
+      <!-- Genre Filter -->
+      <div>
+        <h3 class="text-sm font-semibold text-text-secondary mb-2" data-i18n="genres">Genres</h3>
+        <div class="flex flex-wrap gap-2" id="genreFilter" role="group" aria-label="Genre filter">
+          <button class="filter-btn genre-btn active" data-genre="all" data-i18n="all_genres">All Genres</button>
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Sort -->
+      <div class="flex flex-wrap items-center gap-3">
+        <label for="sortSelect" class="text-sm font-semibold text-text-secondary" data-i18n="sort_by">Sort By</label>
+        <select id="sortSelect" class="bg-card text-text-primary text-sm rounded-lg px-3 py-2 border border-border-dark focus:outline-none focus:border-primary">
+          <option value="-released" data-i18n="release_date">Release Date</option>
+          <option value="-metacritic" data-i18n="score_high_low">Metacritic (High to Low)</option>
+          <option value="metacritic" data-i18n="score_low_high">Metacritic (Low to High)</option>
+          <option value="name" data-i18n="name_az">Name A-Z</option>
+        </select>
+        <button id="clearFilters" class="text-sm text-danger hover:text-red-400 transition-colors ml-auto" data-i18n="clear_filters">Clear Filters</button>
+      </div>
+    </section>
+
+    <!-- Share Section -->
+    <div class="flex items-center gap-2 mb-4">
+      <button id="shareReleases" class="text-xs bg-card hover:bg-border-dark text-text-secondary px-3 py-1.5 rounded-lg transition-colors border border-border-dark" data-i18n="share_releases">Share This Month's Releases</button>
+      <button class="share-btn text-xs bg-card hover:bg-border-dark text-text-secondary px-2 py-1.5 rounded-lg transition-colors border border-border-dark" data-share="twitter" aria-label="Share on Twitter">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </button>
+      <button class="share-btn text-xs bg-card hover:bg-border-dark text-text-secondary px-2 py-1.5 rounded-lg transition-colors border border-border-dark" data-share="facebook" aria-label="Share on Facebook">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </button>
+      <button class="share-btn text-xs bg-card hover:bg-border-dark text-text-secondary px-2 py-1.5 rounded-lg transition-colors border border-border-dark" data-share="reddit" aria-label="Share on Reddit">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+      </button>
+      <button class="share-btn text-xs bg-card hover:bg-border-dark text-text-secondary px-2 py-1.5 rounded-lg transition-colors border border-border-dark" data-share="copy" aria-label="Copy link">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+      </button>
+    </div>
+
+    <!-- Layout: Game Grid + Sidebar -->
+    <div class="flex gap-6">
+      <!-- Game Grid -->
+      <div class="flex-1">
+        <!-- Top Rated Section -->
+        <section id="topRatedSection" class="mb-8 hidden">
+          <h3 class="text-lg font-bold text-accent mb-3 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span data-i18n="top_rated">Top Rated</span>
+          </h3>
+          <div id="topRatedGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+        </section>
+
+        <!-- All Games -->
+        <section>
+          <div id="gameGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <!-- Skeleton loaders -->
+            <div class="skeleton-card bg-card rounded-xl overflow-hidden animate-pulse"><div class="h-48 bg-border-dark"></div><div class="p-4 space-y-3"><div class="h-4 bg-border-dark rounded w-3/4"></div><div class="h-3 bg-border-dark rounded w-1/2"></div><div class="h-3 bg-border-dark rounded w-1/3"></div></div></div>
+            <div class="skeleton-card bg-card rounded-xl overflow-hidden animate-pulse"><div class="h-48 bg-border-dark"></div><div class="p-4 space-y-3"><div class="h-4 bg-border-dark rounded w-3/4"></div><div class="h-3 bg-border-dark rounded w-1/2"></div><div class="h-3 bg-border-dark rounded w-1/3"></div></div></div>
+            <div class="skeleton-card bg-card rounded-xl overflow-hidden animate-pulse"><div class="h-48 bg-border-dark"></div><div class="p-4 space-y-3"><div class="h-4 bg-border-dark rounded w-3/4"></div><div class="h-3 bg-border-dark rounded w-1/2"></div><div class="h-3 bg-border-dark rounded w-1/3"></div></div></div>
+            <div class="skeleton-card bg-card rounded-xl overflow-hidden animate-pulse"><div class="h-48 bg-border-dark"></div><div class="p-4 space-y-3"><div class="h-4 bg-border-dark rounded w-3/4"></div><div class="h-3 bg-border-dark rounded w-1/2"></div><div class="h-3 bg-border-dark rounded w-1/3"></div></div></div>
+            <div class="skeleton-card bg-card rounded-xl overflow-hidden animate-pulse"><div class="h-48 bg-border-dark"></div><div class="p-4 space-y-3"><div class="h-4 bg-border-dark rounded w-3/4"></div><div class="h-3 bg-border-dark rounded w-1/2"></div><div class="h-3 bg-border-dark rounded w-1/3"></div></div></div>
+            <div class="skeleton-card bg-card rounded-xl overflow-hidden animate-pulse"><div class="h-48 bg-border-dark"></div><div class="p-4 space-y-3"><div class="h-4 bg-border-dark rounded w-3/4"></div><div class="h-3 bg-border-dark rounded w-1/2"></div><div class="h-3 bg-border-dark rounded w-1/3"></div></div></div>
+            <div class="skeleton-card bg-card rounded-xl overflow-hidden animate-pulse"><div class="h-48 bg-border-dark"></div><div class="p-4 space-y-3"><div class="h-4 bg-border-dark rounded w-3/4"></div><div class="h-3 bg-border-dark rounded w-1/2"></div><div class="h-3 bg-border-dark rounded w-1/3"></div></div></div>
+            <div class="skeleton-card bg-card rounded-xl overflow-hidden animate-pulse"><div class="h-48 bg-border-dark"></div><div class="p-4 space-y-3"><div class="h-4 bg-border-dark rounded w-3/4"></div><div class="h-3 bg-border-dark rounded w-1/2"></div><div class="h-3 bg-border-dark rounded w-1/3"></div></div></div>
+          </div>
+
+          <!-- Adsterra In-Feed Ad -->
+          <div class="ad-slot ad-native bg-card rounded-lg flex items-center justify-center text-text-secondary text-xs min-h-[100px] border border-border-dark my-6" data-adsterra-key="in-feed-native">
+            <span>Advertisement</span>
+          </div>
+
+          <!-- No Games Message -->
+          <div id="noGames" class="hidden text-center py-12">
+            <svg class="w-16 h-16 mx-auto text-text-secondary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-text-secondary text-lg" data-i18n="no_games">No games found for this period.</p>
+          </div>
+
+          <!-- Load More -->
+          <div class="text-center mt-8">
+            <button id="loadMore" class="hidden bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded-lg font-medium transition-colors" data-i18n="load_more">Load More</button>
+          </div>
+        </section>
+
+        <!-- AdSense Manual Slot -->
+        <div class="ad-slot ad-adsense bg-card rounded-lg flex items-center justify-center text-text-secondary text-xs min-h-[100px] border border-border-dark mt-6" id="adsense-manual-slot">
+          <span>Advertisement</span>
+        </div>
+      </div>
+
+      <!-- Sidebar (Desktop Only) -->
+      <aside class="hidden lg:block w-72 flex-shrink-0 space-y-6">
+        <!-- Adsterra Sidebar Ad -->
+        <div class="ad-slot ad-sidebar bg-card rounded-lg flex items-center justify-center text-text-secondary text-xs min-h-[250px] border border-border-dark" data-adsterra-key="sidebar-300x250">
+          <span>Advertisement</span>
+        </div>
+
+        <!-- Feedback -->
+        <div class="bg-card rounded-xl p-4 border border-border-dark">
+          <h3 class="text-sm font-bold text-text-primary mb-2" data-i18n="feedback_title">Send Feedback</h3>
+          <p class="text-xs text-text-secondary mb-3" data-i18n="feedback_desc">Help us improve NextGen Game Radar!</p>
+          <a href="mailto:taeshinkim11@gmail.com?subject=NextGen%20Game%20Radar%20Feedback" class="block text-center bg-secondary hover:bg-purple-500 text-white text-sm py-2 rounded-lg transition-colors" data-i18n="feedback_btn">Send Feedback</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Game Detail Modal -->
+  <div id="gameModal" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div class="bg-navy-light rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-border-dark">
+      <div class="relative">
+        <div id="modalScreenshots" class="h-64 bg-card overflow-hidden rounded-t-2xl">
+          <img id="modalImage" src="" alt="" class="w-full h-full object-cover">
+        </div>
+        <button id="modalClose" class="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition-colors" aria-label="Close">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-6">
+        <h2 id="modalTitle" class="text-2xl font-bold text-text-primary mb-2"></h2>
+        <div id="modalMeta" class="flex flex-wrap gap-2 mb-4"></div>
+        <div id="modalScore" class="mb-4"></div>
+        <p id="modalDescription" class="text-text-secondary text-sm leading-relaxed mb-4"></p>
+        <div id="modalPlatforms" class="flex flex-wrap gap-2 mb-4"></div>
+        <div id="modalGenres" class="flex flex-wrap gap-2 mb-4"></div>
+        <div id="modalShareBtns" class="flex gap-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-navy-light border-t border-border-dark mt-12">
+    <!-- Adsterra Footer Banner -->
+    <div class="max-w-7xl mx-auto px-4 pt-4">
+      <div class="ad-slot ad-footer bg-card rounded-lg flex items-center justify-center text-text-secondary text-xs min-h-[50px] border border-border-dark" data-adsterra-key="footer-banner">
+        <span>Advertisement</span>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-lg font-bold text-text-primary mb-2" data-i18n="title">NextGen Game Radar</h3>
+          <p class="text-sm text-text-secondary" data-i18n="footer_desc">Your dashboard for upcoming video game releases and Metacritic scores across all major platforms.</p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-text-primary mb-2" data-i18n="quick_links">Quick Links</h4>
+          <ul class="space-y-1">
+            <li><a href="/" class="text-sm text-text-secondary hover:text-primary" data-i18n="nav_home">Home</a></li>
+            <li><a href="pages/about.html" class="text-sm text-text-secondary hover:text-primary" data-i18n="nav_about">About</a></li>
+            <li><a href="pages/faq.html" class="text-sm text-text-secondary hover:text-primary" data-i18n="nav_faq">FAQ</a></li>
+            <li><a href="pages/privacy.html" class="text-sm text-text-secondary hover:text-primary" data-i18n="nav_privacy">Privacy Policy</a></li>
+            <li><a href="pages/terms.html" class="text-sm text-text-secondary hover:text-primary" data-i18n="nav_terms">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-text-primary mb-2" data-i18n="feedback_title">Feedback</h4>
+          <p class="text-sm text-text-secondary mb-2" data-i18n="feedback_footer">Have suggestions? Let us know!</p>
+          <a href="mailto:taeshinkim11@gmail.com?subject=NextGen%20Game%20Radar%20Feedback" class="text-sm text-primary hover:text-primary-hover" data-i18n="feedback_btn">Send Feedback</a>
+        </div>
+      </div>
+      <div class="border-t border-border-dark mt-6 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-text-secondary">Powered by <a href="https://rawg.io" class="text-primary hover:text-primary-hover" target="_blank" rel="noopener">RAWG API</a>. Data provided by RAWG Video Games Database.</p>
+        <div id="visitorCounter" class="text-xs text-text-secondary">
+          <span data-i18n="today">Today</span>: <span id="todayCount">0</span> | <span data-i18n="total">Total</span>: <span id="totalCount">0</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
