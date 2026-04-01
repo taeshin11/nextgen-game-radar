@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - NextGen Game Radar</title>
+  <meta name="description" content="Learn about NextGen Game Radar - your dashboard for upcoming video game releases and Metacritic scores.">
+  <link rel="canonical" href="https://nextgen-game-radar.vercel.app/pages/about.html">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'navy': '#1A1F2E', 'navy-light': '#222838', 'card': '#2A3042',
+            'primary': '#4E8FFF', 'primary-hover': '#6BA3FF', 'secondary': '#9B6DFF',
+            'text-primary': '#E8E8EC', 'text-secondary': '#8B95A8', 'border-dark': '#374151',
+          },
+          fontFamily: { 'sans': ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="bg-navy text-text-primary font-sans min-h-screen">
+  <header class="bg-navy-light border-b border-border-dark sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center gap-3">
+      <a href="../index.html" class="text-primary hover:text-primary-hover flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to Dashboard
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold mb-6">About NextGen Game Radar</h1>
+
+    <div class="bg-card rounded-xl p-6 border border-border-dark space-y-6">
+      <section>
+        <h2 class="text-xl font-bold text-primary mb-3">What is NextGen Game Radar?</h2>
+        <p class="text-text-secondary leading-relaxed">NextGen Game Radar is a free, open dashboard that displays upcoming video game releases and latest Metacritic review scores across PC, PlayStation 5, Xbox Series X/S, and Nintendo Switch. We provide gamers, journalists, and industry professionals with an at-a-glance view of what is coming next in gaming.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-primary mb-3">Features</h2>
+        <ul class="text-text-secondary space-y-2 list-disc list-inside">
+          <li>Upcoming game releases organized by month</li>
+          <li>Metacritic score display with color-coded badges</li>
+          <li>Filter by platform: PC, PS5, Xbox Series X/S, Nintendo Switch</li>
+          <li>Filter by genre: Action, RPG, Adventure, and more</li>
+          <li>Sort by release date, score, or name</li>
+          <li>Available in 8 languages</li>
+          <li>Responsive design for all devices</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-primary mb-3">Data Source</h2>
+        <p class="text-text-secondary leading-relaxed">All game data is provided by the <a href="https://rawg.io" class="text-primary hover:text-primary-hover" target="_blank" rel="noopener">RAWG Video Games Database API</a>, one of the largest video game databases with 800,000+ games. Metacritic scores are sourced through RAWG's aggregated data.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-primary mb-3">Contact</h2>
+        <p class="text-text-secondary leading-relaxed">Have feedback, suggestions, or found an issue? Reach out at <a href="mailto:taeshinkim11@gmail.com?subject=NextGen%20Game%20Radar%20Feedback" class="text-primary hover:text-primary-hover">taeshinkim11@gmail.com</a>.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="bg-navy-light border-t border-border-dark mt-12 py-6">
+    <div class="max-w-4xl mx-auto px-4 text-center text-xs text-text-secondary">
+      <p>&copy; 2026 NextGen Game Radar. Powered by <a href="https://rawg.io" class="text-primary" target="_blank" rel="noopener">RAWG API</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

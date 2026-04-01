@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - NextGen Game Radar</title>
+  <meta name="description" content="Frequently asked questions about NextGen Game Radar - how to use the upcoming games dashboard.">
+  <link rel="canonical" href="https://nextgen-game-radar.vercel.app/pages/faq.html">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'navy': '#1A1F2E', 'navy-light': '#222838', 'card': '#2A3042',
+            'primary': '#4E8FFF', 'primary-hover': '#6BA3FF', 'secondary': '#9B6DFF',
+            'text-primary': '#E8E8EC', 'text-secondary': '#8B95A8', 'border-dark': '#374151',
+          },
+          fontFamily: { 'sans': ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="bg-navy text-text-primary font-sans min-h-screen">
+  <header class="bg-navy-light border-b border-border-dark sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center gap-3">
+      <a href="../index.html" class="text-primary hover:text-primary-hover flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to Dashboard
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold mb-6">Frequently Asked Questions</h1>
+
+    <div class="space-y-4">
+      <div class="bg-card rounded-xl p-6 border border-border-dark">
+        <h2 class="text-lg font-bold text-primary mb-2">How do I filter games by platform?</h2>
+        <p class="text-text-secondary leading-relaxed">Use the platform filter buttons at the top of the dashboard. Click on PC, PS5, Xbox, or Switch to filter. You can select multiple platforms at once. Click "All Platforms" to reset.</p>
+      </div>
+
+      <div class="bg-card rounded-xl p-6 border border-border-dark">
+        <h2 class="text-lg font-bold text-primary mb-2">What do the score colors mean?</h2>
+        <p class="text-text-secondary leading-relaxed">Metacritic scores are color-coded: <span class="text-green-400">Green (75-100)</span> means positive reviews, <span class="text-yellow-400">Amber (50-74)</span> means mixed reviews, <span class="text-red-400">Red (0-49)</span> means negative reviews, and <span class="text-gray-400">Gray (TBD)</span> means no score is available yet.</p>
+      </div>
+
+      <div class="bg-card rounded-xl p-6 border border-border-dark">
+        <h2 class="text-lg font-bold text-primary mb-2">How often is the data updated?</h2>
+        <p class="text-text-secondary leading-relaxed">Game data is fetched in real-time from the RAWG Video Games Database API. Data is cached for 5 minutes to provide fast loading. New releases and scores are updated as they become available in the RAWG database.</p>
+      </div>
+
+      <div class="bg-card rounded-xl p-6 border border-border-dark">
+        <h2 class="text-lg font-bold text-primary mb-2">Can I switch the language?</h2>
+        <p class="text-text-secondary leading-relaxed">Yes! Use the language dropdown in the top-right corner of the header. We support English, Korean, Japanese, Chinese, Spanish, German, French, and Portuguese. The interface language is auto-detected from your browser settings.</p>
+      </div>
+
+      <div class="bg-card rounded-xl p-6 border border-border-dark">
+        <h2 class="text-lg font-bold text-primary mb-2">How do I share a game?</h2>
+        <p class="text-text-secondary leading-relaxed">Click on any game card to open its details. In the detail view, you'll find share buttons for Twitter/X, Facebook, and a copy link option. You can also share the entire month's releases using the "Share This Month's Releases" button.</p>
+      </div>
+
+      <div class="bg-card rounded-xl p-6 border border-border-dark">
+        <h2 class="text-lg font-bold text-primary mb-2">Is this service free?</h2>
+        <p class="text-text-secondary leading-relaxed">Yes, NextGen Game Radar is completely free to use. The service is supported by non-intrusive advertisements.</p>
+      </div>
+
+      <div class="bg-card rounded-xl p-6 border border-border-dark">
+        <h2 class="text-lg font-bold text-primary mb-2">How can I provide feedback?</h2>
+        <p class="text-text-secondary leading-relaxed">We welcome your feedback! Send an email to <a href="mailto:taeshinkim11@gmail.com?subject=NextGen%20Game%20Radar%20Feedback" class="text-primary hover:text-primary-hover">taeshinkim11@gmail.com</a> with your suggestions, bug reports, or feature requests.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-navy-light border-t border-border-dark mt-12 py-6">
+    <div class="max-w-4xl mx-auto px-4 text-center text-xs text-text-secondary">
+      <p>&copy; 2026 NextGen Game Radar. Powered by <a href="https://rawg.io" class="text-primary" target="_blank" rel="noopener">RAWG API</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
