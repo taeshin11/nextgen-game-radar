@@ -351,12 +351,22 @@ const I18N = {
   },
 
   init() {
-    const stored = localStorage.getItem('ngr_lang');
-    if (stored && this.translations[stored]) {
-      this.currentLang = stored;
+    // 1. Check ?lang=xx URL parameter first
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = (urlParams.get('lang') || '').toLowerCase();
+    if (urlLang && this.translations[urlLang]) {
+      this.currentLang = urlLang;
+      localStorage.setItem('ngr_lang', urlLang);
     } else {
-      const browserLang = (navigator.language || 'en').slice(0, 2).toLowerCase();
-      this.currentLang = this.translations[browserLang] ? browserLang : 'en';
+      // 2. Check localStorage
+      const stored = localStorage.getItem('ngr_lang');
+      if (stored && this.translations[stored]) {
+        this.currentLang = stored;
+      } else {
+        // 3. Auto-detect from browser language
+        const browserLang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+        this.currentLang = this.translations[browserLang] ? browserLang : 'en';
+      }
     }
 
     const switcher = document.getElementById('langSwitcher');
