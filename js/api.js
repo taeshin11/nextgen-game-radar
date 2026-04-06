@@ -1,7 +1,7 @@
 // NextGen Game Radar - RAWG API Client
 
 const API = {
-  BASE_URL: 'https://api.rawg.io/api',
+  BASE_URL: 'https://api.rawg.io/api/',
   // To use real data, register at https://rawg.io/apidocs and paste your key here
   API_KEY: 'b0f8de7b2a5c4e3f8c1d9e7a6b3f2c1d',
   CACHE_TTL: 5 * 60 * 1000, // 5 minutes

@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ - NextGen Game Radar</title>
-  <meta name="description" content="Frequently asked questions about NextGen Game Radar - how to use the upcoming games dashboard.">
+  <title>FAQ - NextGen Game Radar | Video Game Discovery Questions Answered</title>
+  <meta name="description" content="Frequently asked questions about NextGen Game Radar. Learn about the RAWG API, how to filter by genre and platform, what Metacritic scores mean, how to find upcoming releases, and more.">
+  <meta name="keywords" content="nextgen game radar FAQ, RAWG API questions, metacritic score meaning, how to find upcoming games, game filter platform genre, video game release dates">
   <link rel="canonical" href="https://nextgen-game-radar.vercel.app/pages/faq.html">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -24,6 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7098271335538021" crossorigin="anonymous"></script>
 </head>
 <body class="bg-navy text-text-primary font-sans min-h-screen">
   <header class="bg-navy-light border-b border-border-dark sticky top-0 z-50">
@@ -39,46 +41,62 @@
     <h1 class="text-3xl font-bold mb-6">Frequently Asked Questions</h1>
 
     <div class="space-y-4">
+
       <div class="bg-card rounded-xl p-6 border border-border-dark">
-        <h2 class="text-lg font-bold text-primary mb-2">How do I filter games by platform?</h2>
-        <p class="text-text-secondary leading-relaxed">Use the platform filter buttons at the top of the dashboard. Click on PC, PS5, Xbox, or Switch to filter. You can select multiple platforms at once. Click "All Platforms" to reset.</p>
+        <h2 class="text-lg font-bold text-primary mb-3">What is the RAWG API and why does NextGen Game Radar use it?</h2>
+        <p class="text-text-secondary leading-relaxed">RAWG is the Video Games Database — one of the largest and most comprehensive video game data repositories in the world, cataloguing over 800,000 games across more than 50 platforms spanning multiple decades of gaming history. The RAWG API provides structured, machine-readable access to this dataset, including game titles, release dates, platform compatibility, genre classifications, developer and publisher information, cover art, and aggregated review scores from Metacritic. NextGen Game Radar uses the RAWG API as its exclusive data source because it offers the breadth of coverage, data freshness, and structured metadata needed to power a genuinely useful game release tracker. Rather than manually curating a list of games — which would quickly become outdated — the RAWG API allows the dashboard to stay continuously synchronized with the global game release landscape. You can learn more about RAWG at <a href="https://rawg.io" class="text-primary hover:text-primary-hover" target="_blank" rel="noopener">rawg.io</a>.</p>
       </div>
 
       <div class="bg-card rounded-xl p-6 border border-border-dark">
-        <h2 class="text-lg font-bold text-primary mb-2">What do the score colors mean?</h2>
-        <p class="text-text-secondary leading-relaxed">Metacritic scores are color-coded: <span class="text-green-400">Green (75-100)</span> means positive reviews, <span class="text-yellow-400">Amber (50-74)</span> means mixed reviews, <span class="text-red-400">Red (0-49)</span> means negative reviews, and <span class="text-gray-400">Gray (TBD)</span> means no score is available yet.</p>
+        <h2 class="text-lg font-bold text-primary mb-3">How often is the game data updated on the dashboard?</h2>
+        <p class="text-text-secondary leading-relaxed">NextGen Game Radar fetches data live from the RAWG API each time you load or refresh the dashboard. To prevent unnecessary API calls and ensure fast page loads, fetched data is cached in your browser for a short period of approximately five minutes. This means that if you reload the page within five minutes, you will see the same cached data; after five minutes, a fresh API request is made. In practice, the RAWG database itself is updated continuously by its global community of contributors and by automated systems that track game announcements and releases. So while there may be a brief delay between a new game announcement or a Metacritic score update and its appearance on the RAWG API, the dashboard reflects RAWG's current state as closely as technically feasible. For breaking release news, RAWG's database is usually updated within hours of a major announcement.</p>
       </div>
 
       <div class="bg-card rounded-xl p-6 border border-border-dark">
-        <h2 class="text-lg font-bold text-primary mb-2">How often is the data updated?</h2>
-        <p class="text-text-secondary leading-relaxed">Game data is fetched in real-time from the RAWG Video Games Database API. Data is cached for 5 minutes to provide fast loading. New releases and scores are updated as they become available in the RAWG database.</p>
+        <h2 class="text-lg font-bold text-primary mb-3">How do I filter games by genre or platform?</h2>
+        <p class="text-text-secondary leading-relaxed">The filter controls are located prominently at the top of the main dashboard, just below the header. For platform filtering, click any of the platform buttons — PC, PS5, Xbox Series X/S, or Nintendo Switch — to limit the displayed games to releases on that platform. You can select multiple platforms simultaneously to see games releasing on, for example, both PS5 and PC. Clicking "All Platforms" deselects any active platform filter and shows games across all supported platforms. Genre filtering works similarly: use the genre dropdown or genre filter buttons to select one or more genres such as Action, RPG, Adventure, Strategy, Sports, Puzzle, Simulation, or Shooter. Combining a platform filter with a genre filter gives you a highly focused view — for example, "Action games releasing on Nintendo Switch this month." To clear all filters and return to the full release listing, click the reset or "All" option on any filter group.</p>
       </div>
 
       <div class="bg-card rounded-xl p-6 border border-border-dark">
-        <h2 class="text-lg font-bold text-primary mb-2">Can I switch the language?</h2>
-        <p class="text-text-secondary leading-relaxed">Yes! Use the language dropdown in the top-right corner of the header. We support English, Korean, Japanese, Chinese, Spanish, German, French, and Portuguese. The interface language is auto-detected from your browser settings.</p>
+        <h2 class="text-lg font-bold text-primary mb-3">What does a Metacritic score mean, and how should I interpret it?</h2>
+        <p class="text-text-secondary leading-relaxed">Metacritic is a review aggregation website that collects scores from professional game critics and publications and compiles them into a single weighted average score on a 0–100 scale. This aggregate score — the Metascore — is widely used in the gaming industry as a shorthand for critical reception. On NextGen Game Radar, Metacritic scores are displayed on game cards with color-coded badges to help you quickly gauge a game's reception: green badges indicate a Metascore of 75 or above, which Metacritic classifies as "generally favorable reviews"; amber badges indicate scores in the 50–74 range, representing "mixed or average reviews"; red badges indicate scores of 0–49, which Metacritic classifies as "overwhelming dislike." A gray badge labeled "TBD" or showing no score means the game either has not yet released or has not accumulated enough critical reviews for a Metascore to be calculated. It is important to remember that Metacritic scores represent the aggregate opinion of professional critics at a specific point in time — they are one useful signal, but your personal enjoyment of a game may differ significantly based on your genre preferences and play style.</p>
       </div>
 
       <div class="bg-card rounded-xl p-6 border border-border-dark">
-        <h2 class="text-lg font-bold text-primary mb-2">How do I share a game?</h2>
-        <p class="text-text-secondary leading-relaxed">Click on any game card to open its details. In the detail view, you'll find share buttons for Twitter/X, Facebook, and a copy link option. You can also share the entire month's releases using the "Share This Month's Releases" button.</p>
+        <h2 class="text-lg font-bold text-primary mb-3">How do I find upcoming game releases and future launch dates?</h2>
+        <p class="text-text-secondary leading-relaxed">The main dashboard organizes game releases chronologically by month. By default, you will see games grouped starting from the current month, with upcoming future releases displayed in subsequent month sections below. To navigate to a specific month, scroll down through the release calendar. If you are specifically looking for titles that have not yet launched, look for games whose release date falls in the future — these will appear in the upcoming month sections and will typically show "TBD" or no Metacritic score yet since they have not received critical reviews. You can also sort the entire listing by release date (ascending or descending) using the sort control at the top of the dashboard, which brings the most imminent upcoming releases to the top of the list. Combining the "sort by release date" option with a platform or genre filter is the most efficient way to find exactly what is coming next for the games you care about.</p>
       </div>
 
       <div class="bg-card rounded-xl p-6 border border-border-dark">
-        <h2 class="text-lg font-bold text-primary mb-2">Is this service free?</h2>
-        <p class="text-text-secondary leading-relaxed">Yes, NextGen Game Radar is completely free to use. The service is supported by non-intrusive advertisements.</p>
+        <h2 class="text-lg font-bold text-primary mb-3">Which gaming platforms does NextGen Game Radar support?</h2>
+        <p class="text-text-secondary leading-relaxed">NextGen Game Radar's primary focus is on the four major current-generation gaming platforms: PC (Windows), PlayStation 5, Xbox Series X/S, and Nintendo Switch. These represent the platforms where the vast majority of new commercial game releases occur today, and they are the platforms most relevant to the current gaming audience. The underlying RAWG API actually contains data on dozens of additional platforms — including older PlayStation and Xbox generations, Game Boy, Wii, mobile platforms (iOS and Android), and more — but the dashboard's filter interface focuses on these four current platforms to keep the experience clean and relevant. Games that release across multiple current platforms will appear under any filter for those platforms. If you do not apply any platform filter, the dashboard shows all available games regardless of platform.</p>
       </div>
 
       <div class="bg-card rounded-xl p-6 border border-border-dark">
-        <h2 class="text-lg font-bold text-primary mb-2">How can I provide feedback?</h2>
-        <p class="text-text-secondary leading-relaxed">We welcome your feedback! Send an email to <a href="mailto:taeshinkim11@gmail.com?subject=NextGen%20Game%20Radar%20Feedback" class="text-primary hover:text-primary-hover">taeshinkim11@gmail.com</a> with your suggestions, bug reports, or feature requests.</p>
+        <h2 class="text-lg font-bold text-primary mb-3">Is there a mobile app for NextGen Game Radar?</h2>
+        <p class="text-text-secondary leading-relaxed">NextGen Game Radar does not currently have a dedicated native mobile app for iOS or Android. However, the website is fully responsive and designed to work excellently on mobile browsers. The dashboard layout adapts automatically to smaller screens — game cards stack vertically, filter buttons remain easy to tap, and the overall interface is optimized for touch interaction. You can access the full functionality of NextGen Game Radar from any modern mobile browser, including Chrome on Android and Safari on iOS, without any loss of features compared to the desktop experience. For the most convenient mobile access, we recommend saving the site to your home screen using your browser's "Add to Home Screen" feature. This creates a shortcut that behaves similarly to a native app icon, giving you one-tap access to the dashboard from your phone's home screen without needing to open the browser and type the URL each time.</p>
       </div>
+
+      <div class="bg-card rounded-xl p-6 border border-border-dark">
+        <h2 class="text-lg font-bold text-primary mb-3">What do the content ratings shown on game cards mean?</h2>
+        <p class="text-text-secondary leading-relaxed">Where available through the RAWG API, NextGen Game Radar displays the age rating that a game has received from official content rating bodies. The most commonly displayed rating is the ESRB rating used in North America, which classifies games as E (Everyone), E10+ (Everyone 10 and older), T (Teen, ages 13 and up), M (Mature, ages 17 and up), or AO (Adults Only, ages 18 and up). Some games may also show PEGI ratings used in Europe (ranging from PEGI 3 to PEGI 18) or other regional rating systems. These ratings are assigned by the respective rating organizations based on the game's content, including violence, language, sexual content, and substance use. Not all games in the RAWG database have a rating assigned — newer or smaller titles may not have gone through the rating process yet, in which case no rating badge is displayed. Content ratings are intended as guidance, particularly for parents making purchasing decisions for younger players, and do not reflect critical quality or our endorsement or discouragement of any title.</p>
+      </div>
+
     </div>
   </main>
 
   <footer class="bg-navy-light border-t border-border-dark mt-12 py-6">
-    <div class="max-w-4xl mx-auto px-4 text-center text-xs text-text-secondary">
-      <p>&copy; 2026 NextGen Game Radar. Powered by <a href="https://rawg.io" class="text-primary" target="_blank" rel="noopener">RAWG API</a>.</p>
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="flex flex-wrap items-center justify-between gap-4 text-xs text-text-secondary">
+        <nav class="flex flex-wrap gap-4">
+          <a href="../index.html" class="hover:text-primary">Home</a>
+          <a href="about.html" class="hover:text-primary">About</a>
+          <a href="faq.html" class="hover:text-primary">FAQ</a>
+          <a href="privacy.html" class="hover:text-primary">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-primary">Terms of Service</a>
+        </nav>
+        <p>&copy; 2026 NextGen Game Radar. Powered by <a href="https://rawg.io" class="text-primary" target="_blank" rel="noopener">RAWG API</a>.</p>
+      </div>
     </div>
   </footer>
 </body>
